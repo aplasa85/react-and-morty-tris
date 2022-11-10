@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: gray;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.Navbar-top {
+  background-color: salmon;
+  width: 100%;
+  font-family: fantasy;
+  padding: 1rem;
+  padding: 1px;
+
+}
+
+.Navbar-bottom {
+  background-color: salmon;
+  font-family: fantasy;
+  max-width: 100%;
+  text-decoration: none;
+
+}
+
+li Link {
+  width: 100%;
+  text-decoration: none;
+  background-color: black;
+
 }
