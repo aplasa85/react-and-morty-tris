@@ -13,9 +13,10 @@ function App() {
           </StyledHeader>
           <StyledCard>
           <h3>Random card</h3>  <img src="https://rickandmortyapi.com/api/character/avatar/2.jpeg" alt="Random Pic"></img>
+          </StyledCard>
+          <StyledCard>
           <h3>Random card</h3>  <img src="https://rickandmortyapi.com/api/character/avatar/2.jpeg" alt="Random Pic"></img>
           </StyledCard>
-          
           
           <Footer>
             <StyledList>
@@ -47,8 +48,10 @@ background-color: darkgrey;
 margin-bottom: 30px;
 margin-left: 60px;
 border: 1px solid black;
-
-
+margin-right: 60px;
+align-items: center;
+display: flex;
+flex-direction: column;
 `
 
 const StyledHeader =styled.header `
