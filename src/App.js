@@ -1,46 +1,10 @@
 
 import styled from 'styled-components';
+import Home from ".Pages/Home.jsx";
 import {useState, useEffect} from "react";
+import {Routes, Route, BrowserRouter} from "react-router-dom";
 
-function App() {
-
-const [characters, setCharacters] = useState([]);
-
-const fetchData = async () => {
-  const response = await fetch ("https://rickandmortyapi.com/api/character");
-  const data = await response.json();
-  setCharacters(data["results"]);
-};
-
-useEffect(() => {
-  fetchData();
-}, []);
-
-
-  return (
-    <body >
-      <StyledHeader>
-        <StyledTitle><h1>
-          React and Morty App
-          </h1></StyledTitle>
-         
-          </StyledHeader>
-       
-          {
-            characters.map(character => {
-        
-             return<StyledCard>
-             <img src={character.image} alt=""/>
-             <p>{character.name}</p>
-             <p>{character.gender}</p>
-             <p>{character.status}</p>
-            </StyledCard>
-})}
-
-            
-
-
-
+<Home>
             
 
           
@@ -68,6 +32,9 @@ const StyledTitle = styled.h1 `
   font-family: fantasy;
   padding: 1px;
   font-size:smaller;
+  display:flex;
+justify-content: center;
+ 
   ;
 
 `
@@ -75,11 +42,13 @@ const StyledCard = styled.article `
 background-color: darkgrey;
 margin-bottom: 30px;
 margin-left: 60px;
-border: 1px solid black;
+border: 5px solid black;
 margin-right: 60px;
 align-items: center;
 display: flex;
 flex-direction: column;
+border-radius: 25px;
+font-family: Times New Roman;
 `
 
 const StyledHeader =styled.header `
@@ -108,7 +77,8 @@ const Link = styled.li `
 list-style-type: none;
 display: inline;
 color: white;
-padding: 30px;
+padding: 15px;
+
 
 
 
