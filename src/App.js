@@ -1,8 +1,22 @@
-import './App.css';
-import styled from 'styled-components';
 
+import styled from 'styled-components';
+import {useState, useEffect} from "react";
 
 function App() {
+
+const [characters, setCharacters] = useState([]);
+
+const fetchData = async () => {
+  const response = await fetch ("https://rickandmortyapi.com/api/character");
+  const data = await response.json();
+  setCharacters(data["results"]);
+};
+
+useEffect(() => {
+  fetchData();
+}, []);
+
+
   return (
     <body >
       <StyledHeader>
@@ -11,11 +25,26 @@ function App() {
           </h1></StyledTitle>
          
           </StyledHeader>
-          <StyledCard>
-          <h3>Random card</h3>  <img src="https://rickandmortyapi.com/api/character/avatar/2.jpeg" alt="Random Pic"></img>
-          <h3>Random card</h3>  <img src="https://rickandmortyapi.com/api/character/avatar/2.jpeg" alt="Random Pic"></img>
-          </StyledCard>
+       
+          {
+            characters.map(character => {
+        
+             return<StyledCard>
+             <img src={character.image} alt=""/>
+             <p>{character.name}</p>
+             <p>{character.gender}</p>
+             <p>{character.status}</p>
+            </StyledCard>
+})}
+
+            
+
+
+
+            
+
           
+            
           
           <Footer>
             <StyledList>
@@ -47,8 +76,10 @@ background-color: darkgrey;
 margin-bottom: 30px;
 margin-left: 60px;
 border: 1px solid black;
-
-
+margin-right: 60px;
+align-items: center;
+display: flex;
+flex-direction: column;
 `
 
 const StyledHeader =styled.header `
@@ -57,15 +88,13 @@ const StyledHeader =styled.header `
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  padding: 0;
 `
 const Footer = styled.div `
 background-color: black;
 color: white;
 font-family: fantasy;
-max-width: 100%;
-
 padding: 5px;`
 
 const StyledList = styled.ul `
