@@ -1,28 +1,31 @@
 
 import styled from 'styled-components';
 import Home from ".Pages/Home.jsx";
-import {useState, useEffect} from "react";
-import {Routes, Route, BrowserRouter} from "react-router-dom";
+import {Route, Link} from "react-router-dom";
+//import {useState, useEffect} from "react";
 
-<Home>
-            
+           
+function App() {
+  return (
+    <div>
+      <Route exact path= "/" component={Home} />
+      <Route exact path= "/card" component={Card} />
 
           
-            
-          
-          <Footer>
+          /* <Footer>
             <StyledList>
               <a href="#"><Link>Link 1</Link></a>
               <a href="#"><Link>Link 2</Link></a>
               <a href="#"><Link>Link 3</Link></a>
             
-            </StyledList>
+            </StyledList>*/
           
           </Footer>
+    </div>
     
-    </body>
-  );
-}
+
+  )};
+
 
 
 
@@ -73,7 +76,7 @@ border: 1px solid black;
 `
 
 
-const Link = styled.li `
+const stlyedLink = styled.li `
 list-style-type: none;
 display: inline;
 color: white;

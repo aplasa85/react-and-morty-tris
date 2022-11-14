@@ -1,9 +1,12 @@
 import "./App.js";
 import React from "react";
+import {Home} from '.Pages/Home'
+export default Home
 
-function Home() {
 
-    const [characters, setCharacters] = useState([]);
+function Home() {}
+//<div>
+   /* const [characters, setCharacters] = useState([]);
     
     const fetchData = async () => {
       const response = await fetch ("https://rickandmortyapi.com/api/character");
@@ -17,7 +20,7 @@ function Home() {
     
     
       return (
-        <body >
+        
           <StyledHeader>
             <StyledTitle><h1>
               React and Morty App
@@ -34,8 +37,12 @@ function Home() {
                  <p>{character.gender}</p>
                  <p>{character.status}</p>
                 </StyledCard>
-    })}
-    
+
+
+            
+    )}*/
+    //</div>
                 
-    export default Home
-    
+ 
+//
+//
